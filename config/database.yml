@@ -1,0 +1,28 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+# Install the pg driver:
+#   gem install pg
+
+default: &default
+  adapter: postgresql
+  host: localhost  
+  port: 5431  
+  encoding: unicode
+  pool: 5  
+
+development:
+  <<: *default
+  database: sample_development
+  username: bitnami_sample
+  password: b33842f26f
+
+test:
+  <<: *default
+  database: sample_test
+  username: bitnami_sample
+  password: b33842f26f
+  
+production:
+  <<: *default
+  database: sample_production
+  username: bitnami_sample
+  password: b33842f26f
