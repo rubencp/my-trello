@@ -1,0 +1,132 @@
+#Pasos
+rails new NameOfApp
+
+
+rails generate scaffold mlfb name:string 
+
+#Create Person
+rails generate scaffold Person name:string email:string ssid:string
+
+#Person Type
+rails generate scaffold PersonType name:string
+
+#Create SA Action Item
+rails generate scaffold SaActionItem title:string description:text status:string remark:text link_ulr:string person:references 
+
+
+rails generate scaffold SaRequest title:string topic:string status:string decision:string applicant:string sa_incharge:string impacted_projects:string sub_projects:string mechanical_interfaces:string
+
+
+rails generate scaffold Project name:string 
+rails generate scaffold SRStatus name:string
+
+
+rails g migration AddPersonTypeToPerson person_type:references
+ # belongs_to = where the _id is.
+
+
+
+rake db:migrate
+
+#Error de Tabla duplicada
+#Eliminar Tabla
+ActiveRecord::Migration.drop_table(:products)
+
+
+#Eagerload
+includes(:addresses)
+preload(:addresses)
+eager_load(:addresses)
+
+
+#Add in seeds !Can destroy other tables be carefull
+require 'active_record/fixtures'
+Fixtures.create_fixtures("#{Rails.root}/test/fixtures", "operating_systems")
+
+Integers need to be quoted "5"
+and create the initial data as fixtures
+rake db:seed
+or
+rake db:fixtures:load FIXTURES=credit_card_types
+
+#DropDown for the form
+<%= collection_select(:sa_action_item, :person_id, Person.all, :id, :name)
+
+
+
+Rails.application.routes
+
+mkdir lib/templates/erb/scaffold/
+cp https://github.com/rails/rails/tree/master/railties/lib/rails/generators/erb/scaffold/templates .
+
+https://github.com/rails/rails/tree/3e36db4406beea32772b1db1e9a16cc1e8aea14c/railties/lib/rails/generators/erb/scaffold
+
+rails/actionpack/lib/action_dispatch/middleware/templates/routes/_route.html.erb
+
+
+
+http://www.zoll.de/DE/Unternehmen/Warenverkehr/Einfuhr-aus-einem-Nicht-EU-Staat/einfuhr-aus-einem-nicht-eu-staat_node.html
+
+ - Lebens- und Futtermittel, ökologischer Landbau
+ 	- Lebens- und Futtermittel
+ 	- Ökologischer Landbau
+ - Pflanzen sowie daraus hergestellte Produkte
+ - Agrarerzeugnisse
+ 	- Gartenbauerzeugnisse (Obst und Gemüse)
+ 	- Ursprungszeugnis
+ 	- Lizenzen
+
+http://www.zoll.de/DE/Fachthemen/Verbote-Beschraenkungen/Schutz-der-menschlichen-Gesundheit/Lebensmittel/lebensmittel_node.html
+
+
+doskey gl=git log --oneline --decorate
+doskey gs=git status
+doskey gc=git commit 
+
+git config --global color.ui auto
+git config --global color.diff auto
+git config --global color.interactive auto
+git config --global color.status auto
+
+
+
+
+
+<%= link_to 'Show', "people", class: "btn btn-primary" %>
+<%= link_to "Learn More", {controller: "people", action: "index"}, class: "btn btn-primary btn-xs" %>
+
+
+<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<div class="row">
+  <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+
+<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+<div class="row">
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+
+<!-- Columns are always 50% wide, on mobile and desktop -->
+<div class="row">
+  <div class="col-xs-6">.col-xs-6</div>
+  <div class="col-xs-6">.col-xs-6</div>
+</div>
+
+
+
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    All Routes
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  <li><a href ="rails/info/routes">Detailed Routes</a></li>  
+   <% @rutas.each do |una_ruta| %>
+    <li><a href="<%= una_ruta %>"><%= una_ruta %></a></li>
+   <% end %>
+  </ul>
+</div>
