@@ -1,0 +1,40 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: "SAS_MCCB_Thermal"
+  description: "MyText"
+  status: "released"
+  remark: "MyText"
+  link_ulr: "MyString"
+  person_id: 1.to_i
+
+two:
+  title: "SA-Request_FY1415-0735-Overtemperature_on_UTAP.xlsm"
+  description: "MyText"
+  status: "modified"
+  remark: "MyText"
+  link_ulr: "MyString"
+  person_id: 1.to_i
+
+three:
+  title: "SA-Request_FY1112-0277_MO_SEO_Terminals_Marking.xls"
+  description: "MyText"
+  status: "modified"
+  person_id: 1.to_i
+
+four:
+  title: "IFS_IO_Ports_V01_D"
+  description: "MyText"
+  status: "modified"
+  person_id: 1.to_i
+
+five:
+  title: "IFS_SEO_PLC"
+  description: "MyText"
+  status: "new"
+  person_id: 1.to_i
+
+six:
+  title: "SADD_ETU_Laurel_Electronic_Safety"
+  status: "new"
+  person_id: 1.to_i
