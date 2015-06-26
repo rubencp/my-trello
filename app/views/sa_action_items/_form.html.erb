@@ -1,0 +1,66 @@
+<%= form_for(sa_action_item) do |f| %>
+  <% if sa_action_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sa_action_item.errors.count, "error") %> prohibited this sa_action_item from being saved:</h2>
+
+      <ul>
+      <% sa_action_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+
+    <%= f.label :title %><br>
+    <%= f.text_field :title,  class: "form-control" %>
+
+  </div>
+
+
+  <div class="field">
+
+    <%= f.label :description %><br>
+    <%= f.text_area :description,  class: "form-control" %>
+
+  </div>
+
+
+  <div class="field">
+
+    <%= f.label :status %><br>
+    <%= f.text_field :status,  class: "form-control" %>
+
+  </div>
+
+
+  <div class="field">
+
+    <%= f.label :remark %><br>
+    <%= f.text_area :remark,  class: "form-control" %>
+
+  </div>
+
+
+  <div class="field">
+
+    <%= f.label :link_ulr %><br>
+    <%= f.text_field :link_ulr,  class: "form-control" %>
+
+  </div>
+
+
+  <div class="field">
+
+    <%= f.label :person_id %><br>
+    <%#= f.text_field :person_id,  class: "form-control" %>
+    <%= collection_select(:sa_action_item, :person_id, Person.all, :id, :name) %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit :class => 'btn btn-primary'  %>
+  </div>
+<% end %>

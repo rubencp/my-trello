@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<strong>Name:</strong>
+<%= @person.name %>
+</p>
+
+<p>
+<strong>Email:</strong>
+<%= @person.email %>
+</p>
+
+<p>
+<strong>Ssid:</strong>
+<%= @person.ssid %>
+</p>
+
+<p>
+<strong>Person type:</strong>
+<%= @person.person_type %>
+</p>
+
+
+<%= link_to '', people_path, class: "btn btn-default btn-sm glyphicon glyphicon-circle-arrow-left" %>
+<%= link_to 'Edit', edit_person_path(@person), class: "btn btn-sm btn-warning " %> 

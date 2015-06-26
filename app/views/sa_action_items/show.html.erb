@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<strong>Title:</strong>
+<%= @sa_action_item.title %>
+</p>
+
+<p>
+<strong>Description:</strong>
+<%= @sa_action_item.description %>
+</p>
+
+<p>
+<strong>Status:</strong>
+<%= @sa_action_item.status %>
+</p>
+
+<p>
+<strong>Remark:</strong>
+<%= @sa_action_item.remark %>
+</p>
+
+<p>
+<strong>Link ulr:</strong>
+<%= @sa_action_item.link_ulr %>
+</p>
+
+<p>
+<strong>Person:</strong>
+<%= @sa_action_item.person.name %>
+</p>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+    <span class="sr-only">40% Complete (success)</span>
+  </div>
+</div>
+
+
+<%= link_to '', sa_action_items_path, class: "btn btn-default btn-sm glyphicon glyphicon-circle-arrow-left" %>
+<%= link_to 'Edit', edit_sa_action_item_path(@sa_action_item), class: "btn btn-sm btn-warning " %> 
