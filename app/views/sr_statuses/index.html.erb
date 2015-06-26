@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sr Statuses</h1>
+From my Scaffold template (ovveriden)
+
+<table>
+  <thead>
+    <tr>
+
+      <th>Name</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sr_statuses.each do |sr_status| %>
+      <tr>
+
+        <td><%= sr_status.name %></td>
+
+        <td><%= link_to 'Show', sr_status %></td>
+        <td><%= link_to 'Edit', edit_sr_status_path(sr_status) %></td>
+        <td><%= link_to 'Destroy', sr_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sr status', new_sr_status_path %>

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @sa_request.title %>
+</p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @sa_request.topic %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @sa_request.status %>
+</p>
+
+<p>
+  <strong>Decision:</strong>
+  <%= @sa_request.decision %>
+</p>
+
+<p>
+  <strong>Applicant:</strong>
+  <%= @sa_request.applicant %>
+</p>
+
+<p>
+  <strong>Sa incharge:</strong>
+  <%= @sa_request.sa_incharge %>
+</p>
+
+<p>
+  <strong>Impacted projects:</strong>
+  <%= @sa_request.impacted_projects %>
+</p>
+
+<p>
+  <strong>Sub projects:</strong>
+  <%= @sa_request.sub_projects %>
+</p>
+
+<p>
+  <strong>Mechanical interfaces:</strong>
+  <%= @sa_request.mechanical_interfaces %>
+</p>
+
+<%= link_to 'Edit', edit_sa_request_path(@sa_request) %> |
+<%= link_to 'Back', sa_requests_path %>

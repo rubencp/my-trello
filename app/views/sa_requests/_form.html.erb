@@ -1,0 +1,53 @@
+<%= form_for(@sa_request) do |f| %>
+  <% if @sa_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sa_request.errors.count, "error") %> prohibited this sa_request from being saved:</h2>
+
+      <ul>
+      <% @sa_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :topic %><br>
+    <%= f.text_field :topic %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :decision %><br>
+    <%= f.text_field :decision %>
+  </div>
+  <div class="field">
+    <%= f.label :applicant %><br>
+    <%= f.text_field :applicant %>
+  </div>
+  <div class="field">
+    <%= f.label :sa_incharge %><br>
+    <%= f.text_field :sa_incharge %>
+  </div>
+  <div class="field">
+    <%= f.label :impacted_projects %><br>
+    <%= f.text_field :impacted_projects %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_projects %><br>
+    <%= f.text_field :sub_projects %>
+  </div>
+  <div class="field">
+    <%= f.label :mechanical_interfaces %><br>
+    <%= f.text_field :mechanical_interfaces %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

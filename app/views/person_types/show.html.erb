@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<strong>Name:</strong>
+<%= @person_type.name %>
+</p>
+
+
+<%= link_to '', person_types_path, class: "btn btn-default btn-sm glyphicon glyphicon-circle-arrow-left" %>
+<%= link_to 'Edit', edit_person_type_path(@person_type), class: "btn btn-sm btn-warning " %> 
