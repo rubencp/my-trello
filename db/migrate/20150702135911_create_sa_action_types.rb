@@ -1,0 +1,9 @@
+class CreateSaActionTypes < ActiveRecord::Migration
+  def change
+    create_table :sa_action_types do |t|
+      t.string :name
+
+      t.timestamps null: false
+    end
+  end
+end

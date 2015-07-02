@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626110922) do
+ActiveRecord::Schema.define(version: 20150702135954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "document_statuses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "mlfas", force: :cascade do |t|
     t.text     "description"
@@ -45,15 +51,46 @@ ActiveRecord::Schema.define(version: 20150626110922) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "manager"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "person_id"
+  end
+
+  add_index "projects", ["person_id"], name: "index_projects_on_person_id", using: :btree
+
   create_table "sa_action_items", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.string   "status"
     t.text     "remark"
     t.string   "link_ulr"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "person_id"
+    t.integer  "sa_action_type_id"
+  end
+
+  add_index "sa_action_items", ["sa_action_type_id"], name: "index_sa_action_items_on_sa_action_type_id", using: :btree
+
+  create_table "sa_action_statuses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sa_action_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sa_request_statuses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sa_requests", force: :cascade do |t|
@@ -76,5 +113,13 @@ ActiveRecord::Schema.define(version: 20150626110922) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "topics", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "people", "person_types"
+  add_foreign_key "projects", "people"
+  add_foreign_key "sa_action_items", "sa_action_types"
 end
