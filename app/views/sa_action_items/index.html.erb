@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Sa Action Items</h1>
-From my Scaffold template (ovveriden)
+<h1>System Architect Action Items</h1>
+
 
 <table class="table table-striped table-hover table-condensed">
   <thead>
@@ -11,13 +11,15 @@ From my Scaffold template (ovveriden)
 
     <!--  <th>Description</th> -->
 
+      <th>Type</th>
+
       <th>Status</th>
 
       <!--<th>Remark</th>-->
 
       <!--<th>Link ulr</th>-->
 
-      <th>Person</th>
+      <th>Responsible</th>
 
       <th colspan="3"></th>
     </tr>
@@ -30,6 +32,8 @@ From my Scaffold template (ovveriden)
         <td><%= link_to sa_action_item.title, sa_action_item %></td>
 
         <!--<td><%= sa_action_item.description %></td>-->
+
+        <td><%= sa_action_item.type %></td>
 
         <td><%= sa_action_item.status %></td>
 

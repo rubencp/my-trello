@@ -51,6 +51,12 @@
 
   </div>
 
+  <div class="field">
+
+    <%= f.label :sa_action_type_id %><br>
+    <%#= f.text_field :person_id,  class: "form-control" %>
+    <%= collection_select(:sa_action_item, :sa_action_type_id, SaActionType.all, :id, :name) %>
+  </div>
 
   <div class="field">
 
