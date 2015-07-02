@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<strong>Name:</strong>
+<%= @topic.name %>
+</p>
+
+
+<%= link_to '', topics_path, class: "btn btn-default btn-sm glyphicon glyphicon-circle-arrow-left" %>
+<%= link_to 'Edit', edit_topic_path(@topic), class: "btn btn-sm btn-warning " %> 

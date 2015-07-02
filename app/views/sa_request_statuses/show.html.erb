@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<strong>Name:</strong>
+<%= @sa_request_status.name %>
+</p>
+
+
+<%= link_to '', sa_request_statuses_path, class: "btn btn-default btn-sm glyphicon glyphicon-circle-arrow-left" %>
+<%= link_to 'Edit', edit_sa_request_status_path(@sa_request_status), class: "btn btn-sm btn-warning " %> 
