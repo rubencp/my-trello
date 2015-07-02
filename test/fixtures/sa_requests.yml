@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  topic: MyString
+  status: MyString
+  decision: MyString
+  applicant: MyString
+  sa_incharge: MyString
+  impacted_projects: MyString
+  sub_projects: MyString
+  mechanical_interfaces: MyString
+
+two:
+  title: MyString
+  topic: MyString
+  status: MyString
+  decision: MyString
+  applicant: MyString
+  sa_incharge: MyString
+  impacted_projects: MyString
+  sub_projects: MyString
+  mechanical_interfaces: MyString
