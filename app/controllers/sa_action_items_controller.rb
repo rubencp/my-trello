@@ -69,6 +69,6 @@ class SaActionItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sa_action_item_params
-      params.require(:sa_action_item).permit(:title, :description, :status, :remark, :link_ulr, :person_id)
+      params.require(:sa_action_item).permit(:title, :description, :status, :remark, :link_ulr, :person_id, :sa_action_type_id)
     end
 end
