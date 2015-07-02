@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  resources :sa_action_types
+
+  resources :topics
+
+  resources :document_statuses
+
+  resources :sa_request_statuses
+
+  resources :sa_action_statuses
+
+  resources :projects
+
   resources :sa_action_items
 
   resources :person_types

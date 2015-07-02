@@ -17,9 +17,16 @@ rails generate scaffold SaActionItem title:string description:text status:string
 rails generate scaffold SaRequest title:string topic:string status:string decision:string applicant:string sa_incharge:string impacted_projects:string sub_projects:string mechanical_interfaces:string
 
 
-rails generate scaffold Project name:string 
+rails generate scaffold Project name:string manager:integer
 rails generate scaffold SRStatus name:string
+rails generate scaffold SaActionStatus name:string
+rails generate scaffold SaRequestStatus name:string
+rails generate scaffold DocumentStatus name:string
+rails generate scaffold Topic name:string
+rails generate scaffold SaActionType name:string
 
+
+rails g migration AddTypeToSaActionItem sa_action_type:references
 
 rails g migration AddPersonTypeToPerson person_type:references
  # belongs_to = where the _id is.
