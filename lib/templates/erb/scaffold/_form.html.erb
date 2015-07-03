@@ -11,6 +11,7 @@
     </div>
   <%% end %>
 
+hola
 <% attributes.each do |attribute| -%>
   <div class="field">
 <% if attribute.password_digest? -%>
@@ -22,6 +23,13 @@
     <%%= f.label :password_confirmation %><br>
     <%%= f.password_field :password_confirmation,  class: "form-control" %>
 <% else -%>
+
+   <% if attribute.reference? -%>
+    <%%= collection_select(:<%= singular_table_name %>, :<%= attribute.column_name %>, <%= attribute.name.sub(/_id$/,'').camelcase %>.all, :id, :name) %>
+   <% else -%>
+   Normal
+   <% end -%>
+
     <%%= f.label :<%= attribute.column_name %> %><br>
     <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %>,  class: "form-control" %>
 <% end -%>
